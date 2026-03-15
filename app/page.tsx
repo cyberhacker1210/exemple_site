@@ -1,4 +1,4 @@
-import { FaPhone, FaWhatsapp, FaCheckCircle, FaStar, FaWrench, FaShower, FaFire } from 'react-icons/fa';
+import { FaPhone, FaCheckCircle, FaStar, FaWrench, FaShower, FaFire } from 'react-icons/fa';
 import { MdPlumbing } from 'react-icons/md';
 
 export default function Home() {
@@ -12,8 +12,8 @@ export default function Home() {
             <MdPlumbing className="text-3xl" />
             <span className="text-xl font-bold">DépannExpress Plomberie</span>
           </div>
-          <a href="tel:0600000000" className="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition">
-            📞 Appeler
+          <a href="tel:0600000000" className="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition flex items-center gap-2">
+            <FaPhone /> Appeler
           </a>
         </div>
       </header>
@@ -24,22 +24,22 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl font-bold text-gray-900 mb-4">
-                Plombier d'urgence à <span className="text-blue-600">[Ta Ville]</span>
+                Plombier d'urgence à <span className="text-blue-600">Ardres & Calais</span>
               </h1>
               <p className="text-xl text-gray-700 mb-6">
-                Intervention en moins de 2h · 7j/7 · Devis gratuit
+                Intervention en moins de 2h · 7j/7 · Devis gratuit par téléphone
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 Fuite, WC bouchés, chaudière en panne ?<br />
                 On arrive, on répare, vous êtes tranquille.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:0600000000" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition text-center flex items-center justify-center gap-2">
-                  <FaPhone /> Appeler maintenant
+              <div className="flex flex-col gap-4">
+                <a href="tel:0600000000" className="bg-blue-600 text-white px-8 py-5 rounded-lg font-bold text-2xl hover:bg-blue-700 transition text-center flex items-center justify-center gap-3 shadow-xl">
+                  <FaPhone className="text-3xl" /> 06 00 00 00 00
                 </a>
-                <a href="#contact" className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center">
-                  📝 Demander un devis
-                </a>
+                <p className="text-center text-gray-600 text-sm">
+                  Réponse immédiate · Devis gratuit au téléphone
+                </p>
               </div>
             </div>
             <div className="hidden md:block">
@@ -125,7 +125,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               "Intervention rapide (sous 2h en urgence)",
-              "Devis gratuit et transparent",
+              "Devis gratuit par téléphone",
               "Artisan local depuis 12 ans",
               "Paiement après travaux",
               "Garantie satisfait ou remboursé",
@@ -151,17 +151,17 @@ export default function Home() {
             {[
               {
                 name: "Sophie M.",
-                city: "[Ta Ville]",
+                city: "Ardres",
                 text: "Fuite dans la cuisine un dimanche soir. Arnaud est venu en 1h30, problème réglé en 20 min. Tarif honnête, je recommande !",
               },
               {
                 name: "Karim B.",
-                city: "[Ville d'à côté]",
+                city: "Calais",
                 text: "Remplacement de mon chauffe-eau. Travail propre, rapide, prix correct. Enfin un artisan qui répond au téléphone !",
               },
               {
                 name: "Claire D.",
-                city: "[Ta Ville]",
+                city: "Ardres",
                 text: "Installation complète de ma salle de bain. Résultat impeccable, dans les temps. Merci !",
               }
             ].map((review, i) => (
@@ -180,49 +180,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CONTACT FORM */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-4xl font-bold text-center mb-6">
-            Une urgence ? Un devis ?
+      {/* CALL TO ACTION FINAL - APPEL DIRECT */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <h2 className="text-5xl font-bold mb-6">
+            Une urgence ? Besoin d'un devis ?
           </h2>
-          <p className="text-center text-xl mb-8">
-            Réponse en moins de 15 minutes · 7j/7
+          <p className="text-2xl mb-8">
+            Appelez maintenant · Réponse en moins de 2 minutes
           </p>
           
-          <form className="bg-white text-gray-900 p-8 rounded-xl shadow-2xl" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <div className="space-y-4">
-              <div>
-                <label className="block font-bold mb-2">Nom</label>
-                <input type="text" name="name" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
-              </div>
-              <div>
-                <label className="block font-bold mb-2">Téléphone</label>
-                <input type="tel" name="phone" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
-              </div>
-              <div>
-                <label className="block font-bold mb-2">Type d'intervention</label>
-                <select name="type" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                  <option>Urgence</option>
-                  <option>Devis</option>
-                  <option>Question</option>
-                </select>
-              </div>
-              <div>
-                <label className="block font-bold mb-2">Message (optionnel)</label>
-                <textarea name="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-              </div>
-              <button type="submit" className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition">
-                📩 Envoyer ma demande
-              </button>
+          <a href="tel:0600000000" className="inline-block bg-white text-blue-600 px-12 py-6 rounded-xl font-bold text-3xl hover:bg-gray-100 transition shadow-2xl mb-8">
+            <div className="flex items-center gap-4">
+              <FaPhone className="text-4xl" />
+              <span>06 00 00 00 00</span>
             </div>
-          </form>
+          </a>
 
-          <div className="text-center mt-8">
-            <p className="text-lg mb-4">Ou appelez directement :</p>
-            <a href="tel:0600000000" className="text-3xl font-bold hover:underline flex items-center justify-center gap-2">
-              <FaPhone /> 06 00 00 00 00
-            </a>
+          <div className="space-y-3 text-xl">
+            <p className="flex items-center justify-center gap-2">
+              <FaCheckCircle /> Disponible 7j/7 de 7h à 21h
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <FaCheckCircle /> Devis gratuit par téléphone
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <FaCheckCircle /> Intervention rapide sur Ardres et 20 km alentour
+            </p>
           </div>
         </div>
       </section>
@@ -230,7 +214,8 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">© 2025 DépannExpress Plomberie · [Ta Ville] et alentours</p>
+          <p className="text-gray-400 mb-2">© 2025 DépannExpress Plomberie · Ardres & Calais</p>
+          <p className="text-gray-500 text-sm">Zone d'intervention : Ardres, Calais, Guînes, Licques et alentours (20 km)</p>
         </div>
       </footer>
 
