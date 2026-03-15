@@ -1,65 +1,239 @@
-import Image from "next/image";
+import { FaPhone, FaWhatsapp, FaCheckCircle, FaStar, FaWrench, FaShower, FaFire } from 'react-icons/fa';
+import { MdPlumbing } from 'react-icons/md';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-white">
+      
+      {/* HEADER/NAVIGATION */}
+      <header className="bg-blue-600 text-white py-4 sticky top-0 z-50 shadow-lg">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <MdPlumbing className="text-3xl" />
+            <span className="text-xl font-bold">DépannExpress Plomberie</span>
+          </div>
+          <a href="tel:0600000000" className="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition">
+            📞 Appeler
+          </a>
+        </div>
+      </header>
+
+      {/* HERO SECTION */}
+      <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-5xl font-bold text-gray-900 mb-4">
+                Plombier d'urgence à <span className="text-blue-600">[Ta Ville]</span>
+              </h1>
+              <p className="text-xl text-gray-700 mb-6">
+                Intervention en moins de 2h · 7j/7 · Devis gratuit
+              </p>
+              <p className="text-lg text-gray-600 mb-8">
+                Fuite, WC bouchés, chaudière en panne ?<br />
+                On arrive, on répare, vous êtes tranquille.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="tel:0600000000" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition text-center flex items-center justify-center gap-2">
+                  <FaPhone /> Appeler maintenant
+                </a>
+                <a href="#contact" className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition text-center">
+                  📝 Demander un devis
+                </a>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <img 
+                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&h=600&fit=crop" 
+                alt="Plombier professionnel"
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES SECTION */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Nos interventions rapides
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            
+            {/* Service 1 */}
+            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
+              <FaWrench className="text-5xl text-blue-600 mb-4" />
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Dépannage d'urgence</h3>
+              <p className="text-gray-700 mb-4">
+                Fuite d'eau, robinet cassé, canalisation bouchée
+              </p>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <FaCheckCircle className="text-green-500" /> Intervention sous 2h
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheckCircle className="text-green-500" /> Disponible 24/7
+                </li>
+              </ul>
+            </div>
+
+            {/* Service 2 */}
+            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
+              <FaFire className="text-5xl text-blue-600 mb-4" />
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Réparation & Remplacement</h3>
+              <p className="text-gray-700 mb-4">
+                Chauffe-eau, chaudière, sanitaires
+              </p>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <FaCheckCircle className="text-green-500" /> Devis gratuit
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheckCircle className="text-green-500" /> Pièces garanties 2 ans
+                </li>
+              </ul>
+            </div>
+
+            {/* Service 3 */}
+            <div className="bg-blue-50 p-8 rounded-xl hover:shadow-xl transition">
+              <FaShower className="text-5xl text-blue-600 mb-4" />
+              <h3 className="text-2xl font-bold mb-3 text-gray-900">Rénovation salle de bain</h3>
+              <p className="text-gray-700 mb-4">
+                Installation complète · Douche à l'italienne
+              </p>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <FaCheckCircle className="text-green-500" /> Sur-mesure
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaCheckCircle className="text-green-500" /> Finitions soignées
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* POURQUOI NOUS */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Pourquoi 300+ clients nous font confiance ?
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              "Intervention rapide (sous 2h en urgence)",
+              "Devis gratuit et transparent",
+              "Artisan local depuis 12 ans",
+              "Paiement après travaux",
+              "Garantie satisfait ou remboursé",
+              "Disponible 7j/7"
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white p-4 rounded-lg shadow">
+                <FaCheckCircle className="text-green-500 text-2xl flex-shrink-0 mt-1" />
+                <span className="text-lg text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AVIS CLIENTS */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
+            Ils nous ont fait confiance
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            
+            {[
+              {
+                name: "Sophie M.",
+                city: "[Ta Ville]",
+                text: "Fuite dans la cuisine un dimanche soir. Arnaud est venu en 1h30, problème réglé en 20 min. Tarif honnête, je recommande !",
+              },
+              {
+                name: "Karim B.",
+                city: "[Ville d'à côté]",
+                text: "Remplacement de mon chauffe-eau. Travail propre, rapide, prix correct. Enfin un artisan qui répond au téléphone !",
+              },
+              {
+                name: "Claire D.",
+                city: "[Ta Ville]",
+                text: "Installation complète de ma salle de bain. Résultat impeccable, dans les temps. Merci !",
+              }
+            ].map((review, i) => (
+              <div key={i} className="bg-blue-50 p-6 rounded-xl">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} className="text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
+                <p className="font-bold text-gray-900">— {review.name}, {review.city}</p>
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT FORM */}
+      <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <h2 className="text-4xl font-bold text-center mb-6">
+            Une urgence ? Un devis ?
+          </h2>
+          <p className="text-center text-xl mb-8">
+            Réponse en moins de 15 minutes · 7j/7
           </p>
+          
+          <form className="bg-white text-gray-900 p-8 rounded-xl shadow-2xl" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div className="space-y-4">
+              <div>
+                <label className="block font-bold mb-2">Nom</label>
+                <input type="text" name="name" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+              </div>
+              <div>
+                <label className="block font-bold mb-2">Téléphone</label>
+                <input type="tel" name="phone" required className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" />
+              </div>
+              <div>
+                <label className="block font-bold mb-2">Type d'intervention</label>
+                <select name="type" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                  <option>Urgence</option>
+                  <option>Devis</option>
+                  <option>Question</option>
+                </select>
+              </div>
+              <div>
+                <label className="block font-bold mb-2">Message (optionnel)</label>
+                <textarea name="message" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+              </div>
+              <button type="submit" className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition">
+                📩 Envoyer ma demande
+              </button>
+            </div>
+          </form>
+
+          <div className="text-center mt-8">
+            <p className="text-lg mb-4">Ou appelez directement :</p>
+            <a href="tel:0600000000" className="text-3xl font-bold hover:underline flex items-center justify-center gap-2">
+              <FaPhone /> 06 00 00 00 00
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-400">© 2025 DépannExpress Plomberie · [Ta Ville] et alentours</p>
         </div>
-      </main>
-    </div>
+      </footer>
+
+    </main>
   );
 }
